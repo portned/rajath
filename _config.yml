@@ -3,9 +3,9 @@ markdown: redcarpet
 highlighter: pygments
 
 # Site settings
-title: "Rajath Kumar M.P"
+title: "Rajath Kumar"
 description: > # this means to ignore newlines until "email:"
-   Things that i have done, learnt and thought about
+   Things that I have done, learnt and thought about
 
 email: rajathkumar.exe@gmail.com
 #blog logo
@@ -19,7 +19,7 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
+url: "http://www.rajathkumar.com" # the base hostname & protocol for your site
 baseurl: ""
 
 # social icons and sharing options
@@ -31,12 +31,12 @@ social:
     share_title: ?text=
     share_link: "&amp;url="
 
-#  - icon:	facebook
-#    url:	https://facebook.com/???
-#    desc: Connect with me facebook
-#    share_url: //www.facebook.com/sharer.php
-#    share_title: ?t=
-#    share_link: "&amp;u="
+  - icon:	facebook
+    url:	https://facebook.com/rajathkumar.rk
+    desc: Connect with me facebook
+    share_url: //www.facebook.com/sharer.php
+    share_title: ?t=
+    share_link: "&amp;u="
 
   - icon:	github
     url:	https://github.com/rajathkumarmp
@@ -45,9 +45,9 @@ social:
     share_title:
     share_link:
 
-#  - icon:	google-plus
-#    url:	https://google.com/???
-#    desc:	Add me on google+
-#    share_url:
-#    share_title:
-#    share_link:
+  - icon:	google-plus
+    url:	https://google.com/+rajathkumar
+    desc:	Add me on google+
+    share_url:
+    share_title:
+    share_link:
