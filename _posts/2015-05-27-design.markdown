@@ -13,7 +13,6 @@ permalink : /design/
 
 
 ![](/assets/images/gdgio.png)
-
 ***
 ![](/assets/images/Design/appexpobanner-5.jpg)
 ***
@@ -53,7 +52,6 @@ permalink : /design/
 ![](/assets/images/Design/appengine.png)
 ***
 ![](/assets/images/Design/gdgtshirt.png)
-
 ***
 ![](/assets/images/Design/hny2.png)
 ***
@@ -68,7 +66,6 @@ permalink : /design/
 ![](/assets/images/Design/icon_monthly.png)
 ***
 ![](/assets/images/Design/india.png)
-
 ***
 ![](/assets/images/Design/cake1.png)
 ***
