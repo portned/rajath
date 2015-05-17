@@ -3,49 +3,10 @@ layout: default
 permalink: /contact/
 ---
 
-
-<link rel="import" href="../paper-input/paper-input.html">
-<link rel="import" href="../paper-button/paper-button.html">
-
-<polymer-element name="my-element">
-
-  <template>
-    <style>    
-      :host {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-      }
-      #core_card {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        background-color: rgb(255, 255, 255);
-        border-top-left-radius: 2px;
-        border-top-right-radius: 2px;
-        border-bottom-right-radius: 2px;
-        border-bottom-left-radius: 2px;
-        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
-        left: 160px;
-        top: 220px;
-      }
-    </style>
-    <core-card id="core_card" layout vertical>
  <form action="https://formspree.io/{{ site.email }}" method="POST">
-      <paper-input label="Name" id="paper_input"></paper-input>
-      <paper-input label="email" name="_replyto" committedvalue="email" id="paper_input1"></paper-input>
-      <paper-input label="Message" name="_gotcha" rows="5" id="paper_input2"></paper-input>
-      <paper-button id="paper_button">SUBMIT</paper-button>
-    </core-card></form>
-  </template>
-
-  <script>
-
-    Polymer({
-      
-    });
-
-  </script>
-
-</polymer-element>
+    <input type="text" name="name" placeholder = "Name">
+    <input type="email" name="_replyto" placeholder = "email">
+    <input type="text" name="_gotcha" rows= "5" placeholder = "What would you like to say?"/>
+    <input type="submit" value="Send">
+    <input type="hidden" name="_subject" value="Email Subject" />
+</form>
