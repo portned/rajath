@@ -4,10 +4,19 @@ title: Say Hello
 permalink: /contact/
 ---
 
-<div class="py2">
+
+
   <form action="https://formspree.io/{{ site.email }}" method="POST" class="form-stacked form-light">
-    <input type="text" name="email" class="input mobile-block" placeholder="Email Address">
-    <textarea type="text" name="content" class="input mobile-block" rows="5" placeholder="What would you like to say?"></textarea>
-    <input type="submit" class="button button-blue button-big mobile-block" value="Say Hello">
+  	<div class="input-group margin-bottom-sm">
+     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+  <input class="form-control" type="text" placeholder="Email address"> </div>
+    <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+  <textarea class="form-control" type="password" rows="5" placeholder="Password"></textarea>
+</div>
+    <input type="submit" class="btn btn-lg btn-success" value="Say Hello"><i class="fa fa-comment fa-2x pull-left"></i>
   </form>
+</div>
+
+ 
 </div>
