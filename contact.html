@@ -3,10 +3,18 @@ layout: default
 permalink: /contact/
 ---
 
- <form action="https://formspree.io/{{ site.email }}" method="POST">
+ <!--<form action="https://formspree.io/{{ site.email }}" method="POST">
     <input type="text" name="name" placeholder = "Name"></br>
     <input type="email" name="_replyto" placeholder = "email"></br>
     <input type="text" name="_gotcha" rows= "5" placeholder = "What would you like to say?">
     </br><input type="submit" value="Send">
     </br><input type="hidden" name="_subject" value="Email Subject" />
-</form>
+</form>-->
+
+<div class="py2">
+  <form action="https://formspree.io/{{ site.email }}" method="POST" class="form-stacked form-light">
+    <input type="text" name="email" class="input mobile-block" placeholder="Email Address">
+    <textarea type="text" name="content" class="input mobile-block" rows="5" placeholder="What would you like to say?"></textarea>
+    <input type="submit" class="button button-blue button-big mobile-block" value="Say Hello">
+  </form>
+</div>
