@@ -5,6 +5,7 @@ date:   2015-02-11 20:21:21
 categories: Tutorial
 tags: Python Hyperspectral Image Processing
 image: /assets/images/antivj10.jpg
+permalink: /hyperspectralimage/
 ---
 Introduction
 =============
