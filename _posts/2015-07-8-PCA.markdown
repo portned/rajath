@@ -19,7 +19,7 @@ Consider a data set that you would like to study. As an example let us take some
 		
 	X = { 5,2,3,9,1,4 }
 
-Now calculating the **mean_ of _X_ with _n_ number of data by using the formula
+Now calculating the **mean** of _X_ with _n_ number of data by using the formula
 
 $${\bar{X} = \frac{ \sum_ {i=1}^n X_i}{n}}$$
 
@@ -45,7 +45,7 @@ or
 
 $$var={\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
 
-The variance of _X_ is 6.6667 and that of _Y_ is 3.3335. Which tells us that the data of `X` is more varied or spread across than the data of _Y_
+The variance of _X_ is 6.6667 and that of _Y_ is 3.3335. Which tells us that the data of _X_ is more varied or spread across than the data of _Y_
 
 Now let us consider two dimensional data, `(X,Y)`
 
