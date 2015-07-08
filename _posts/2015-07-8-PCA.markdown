@@ -34,7 +34,7 @@ Notice the mean of this dataset is also 4. So now how do you know how these two 
 
 **Standard Deviation**. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean. For the `X` dataset standard deviation is given by the formula
 
-$${SD = {\sqrt{\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}}$$
+$${SD = {\sqrt{\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}}}$$
 
 Took me sometime to understand as to why `(n-1)` is used. Wikipedia has the [perfect explanation](https://en.wikipedia.org/wiki/Standard_deviation). As of now understand it is Bessel's correction and applying it would give a better answer.
 
@@ -49,3 +49,5 @@ $$var={\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
 The variance of `X` is 6.6667 and that of `Y` is 3.3335. Which tells us that the data of `X` is more varied or spread across than the data of `Y`
 
 Now let us consider two dimensional data, `(X,Y)`
+
+|
