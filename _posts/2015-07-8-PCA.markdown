@@ -16,6 +16,11 @@ It is the oldest and the most widely used statistical multivariate technique whi
 
 Let us get into the nitty gritty, Consider a data set that you would like to study. As an example let us take some random set _X_
 		
-	X = { 5,2,3,7,1,4 }
+	X = { 5,2,3,9,1,4 }
 
-$$x_1 = \sum 132$$
+Now calculating the mean of `X` by using the formula
+
+$$Y=\frac{\sum_i=1^n X_i}{n}
+
+
+would give us 4.
