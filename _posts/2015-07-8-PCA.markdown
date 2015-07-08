@@ -32,4 +32,6 @@ Now consider another dataset
 
 Notice the mean of this dataset is also 4. So now how do you know how these two data is different? Or how it varies?
 
-Standard Deviation. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean.
+Standard Deviation. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean. For the `X` dataset standard deviation is given by the formula
+
+$${SD = {\sqrt{\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}}$$
