@@ -14,13 +14,22 @@ In this post I will try to breakdown Principal component analysis into bits one 
 Principal Component Analysis.
 It is the oldest and the most widely used statistical multivariate technique which finds a pattern in the data under consideration. PCA can be further extended towards dimensionality reduction by extraction important features which are necessary to the given problem statement and ignoring the ones which aren't. It find's its application in face recognition, Image compression, Dimensionality reduction etc.
 
-Let us get into the nitty gritty, Consider a data set that you would like to study. As an example let us take some random set _X_
+Let us get into the nitty gritty, First I will walkthrough by taking an example and applying PCA to a simple one dimensional dataset. Further will take two dimensions and extend it to multi dimensions.
+
+Consider a data set that you would like to study. As an example let us take some random set _X_
 		
 	X = { 5,2,3,9,1,4 }
 
-Now calculating the mean of `X` by using the formula
+Now calculating the mean of `X` with `n` number of data by using the formula
 
-$$Y=\frac{\sum_i=1^n X_i}{n}
+$$Y=\frac{\sum_{i=1}^n X_i}{n}$$
 
+Thus `Y`, The mean will now be equal to 4. Mean as everybody knows it gives the center point of the dataset or the average of the entire dataset.
 
-would give us 4.
+Now consider another dataset $$\bar{X}$$
+
+	$$\bar{X}$$ = { 5,3,1,8,2,5 }
+
+Notice the mean of this dataset is also 4. So now how do you know how these two data is different? Or how it varies?
+
+Standard Deviation. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean.
