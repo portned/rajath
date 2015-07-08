@@ -22,8 +22,10 @@ Consider a data set that you would like to study. As an example let us take some
 
 Now calculating the mean of `X` with `n` number of data by using the formula
 
-\[{\bar{X}= \frac{\sum_{i=1}^n X_i}{n}}\]
-<script type="text/javascript" src="http://www.hostmath.com/Math/MathJax.js?config=OK"></script>
+$${\bar{X}= \frac{\sum_{i=1}^n X_i}{n}}$$
+
+
+$$\bar{X}$$
 
 Thus, The mean will now be equal to 4. Mean as everybody knows it gives the center point of the dataset or the average of the entire dataset.
 
