@@ -21,15 +21,11 @@ Consider a data set that you would like to study. As an example let us take some
 	X = { 5,2,3,9,1,4 }
 
 Now calculating the mean of `X` with `n` number of data by using the formula
-
 $$Y=\frac{\sum_{i=1}^n X_i}{n}$$
-
 Thus `Y`, The mean will now be equal to 4. Mean as everybody knows it gives the center point of the dataset or the average of the entire dataset.
 
-Now consider another dataset $$\bar{X}$$
-
-	$$\bar{X}$$ = { 5,3,1,8,2,5 }
-
+Now consider another dataset
+$$\bar{X} = { 5,3,1,8,2,5 }$$
 Notice the mean of this dataset is also 4. So now how do you know how these two data is different? Or how it varies?
 
 Standard Deviation. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean.
