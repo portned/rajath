@@ -8,19 +8,19 @@ image: /assets/images/antivj10.jpg
 permalink: /PCA/
 ---
 
-Prologue
+##Prologue
 In this post I will try to breakdown Principal component analysis into bits one can easily understand. For a better understanding I will do a quick walkthrough about the important mathematical concepts that you might have studied but haven't used it in real world applications. In the end I will talk about implementing Principal Component Analysis in Python, How to use the same for image compression and in a separate post will talk about using PCA with neural networks for facial recognition.
 
-Principal Component Analysis.
+##Principal Component Analysis.
 It is the oldest and the most widely used statistical multivariate technique which finds a pattern in the data under consideration. PCA can be further extended towards dimensionality reduction by extraction important features which are necessary to the given problem statement and ignoring the ones which aren't. It find's its application in face recognition, Image compression, Dimensionality reduction etc.
 
 Let us get into the nitty gritty, First I will walkthrough by taking an example and applying PCA to a simple one dimensional dataset. Further will take two dimensions and extend it to multi dimensions.
 
-Consider a data set that you would like to study. As an example let us take some random set _X_
+Consider a data set that you would like to study. As an example let us take some random **one dimensional** dataset _X_
 		
 	X = { 5,2,3,9,1,4 }
 
-Now calculating the mean of `X` with `n` number of data by using the formula
+Now calculating the **mean** of `X` with `n` number of data by using the formula
 
 $${\bar{X} = \frac{{\sum_{i=1}^n} X_i}{n}}$$
 
@@ -28,17 +28,17 @@ Thus, The mean will now be equal to 4. Mean as everybody knows it gives the cent
 
 Now consider another dataset 
 
-	Y = { 5,3,1,8,2,5 }
+	Y = { 5,3,2,7,2,5 }
 
 Notice the mean of this dataset is also 4. So now how do you know how these two data is different? Or how it varies?
 
-Standard Deviation. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean. For the `X` dataset standard deviation is given by the formula
+**Standard Deviation**. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean. For the `X` dataset standard deviation is given by the formula
 
 $${SD = {\sqrt{\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}}$$
 
 Took me sometime to understand as to why `(n-1)` is used. Wikipedia has the [perfect explanation](https://en.wikipedia.org/wiki/Standard_deviation). As of now understand it is Bessel's correction and applying it would give a better answer.
 
-Now variance is nothing but the the square of standard deviation.
+Now **variance** is nothing but the the square of standard deviation.
 
 $$var = SD^2$$
 
@@ -46,3 +46,6 @@ or
 
 $$var={\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
 
+The variance of `X` is 6.6667 and that of `Y` is 3.3335. Which tells us that the data of `X` is more varied or spread across than the data of `Y`
+
+Now let us consider two dimensional data, `(X,Y)`
