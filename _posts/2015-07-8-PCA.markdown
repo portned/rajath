@@ -22,7 +22,7 @@ Consider a data set that you would like to study. As an example let us take some
 
 Now calculating the **mean** of `X` with `n` number of data by using the formula
 
-$${\bar{X} = \frac{{\sum_{i=1}^n} X_i}{n}}$$
+$${\bar{X} = \frac{\sum_{i=1}^n X_i}{n}}$$
 
 Thus, The mean will now be equal to 4. Mean as everybody knows it gives the center point of the dataset or the average of the entire dataset.
 
@@ -34,7 +34,7 @@ Notice the mean of this dataset is also 4. So now how do you know how these two 
 
 **Standard Deviation**. Wikipedia defines it as _"A measure that is used to quantify the amount of variation or dispersion of a set of data values"_ which simply means it gives a picture about how the data varies with respect to the mean. For the `X` dataset standard deviation is given by the formula
 
-$${SD = {\sqrt{\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}}}$$
+$$SD = \sqrt{\frac{\sum_{i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
 
 Took me sometime to understand as to why `(n-1)` is used. Wikipedia has the [perfect explanation](https://en.wikipedia.org/wiki/Standard_deviation). As of now understand it is Bessel's correction and applying it would give a better answer.
 
