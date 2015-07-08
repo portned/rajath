@@ -18,4 +18,4 @@ Let us get into the nitty gritty, Consider a data set that you would like to stu
 		
 	X = { 5,2,3,7,1,4 }
 
-$$x_1 = 132$$
+$$x_1 = \sum 132$$
