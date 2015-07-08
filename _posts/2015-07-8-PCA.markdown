@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Understanding Principal Component Analysis"
+date:   2015-02-11 20:21:21
+categories: Understanding
+tags: PCA
+image: /assets/images/antivj10.jpg
+permalink: /PCA/
+---
+
+Prologue
+In this post I will try to breakdown Principal component analysis into bits one can easily understand. For a better understanding I will do a quick walkthrough about the important mathematical concepts that you might have studied but haven't used it in real world applications. In the end I will talk about implementing Principal Component Analysis in Python, How to use the same for image compression and in a separate post will talk about using PCA with neural networks for facial recognition.
+
+Principal Component Analysis.
+It is the oldest and the most widely used statistical multivariate technique which finds a pattern in the data under consideration. PCA can be further extended towards dimensionality reduction by extraction important features which are necessary to the given problem statement and ignoring the ones which aren't. It find's its application in face recognition, Image compression, Dimensionality reduction etc.
+
+Let us get into the nitty gritty, Consider a data set that you would like to study. As an example let us take some random set _X_
+		
+	X = { 5,2,3,7,1,4 }
