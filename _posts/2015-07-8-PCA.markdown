@@ -51,6 +51,5 @@ Now let us consider two dimensional data, `(X,Y)` say
 
 | X | 2 | 3 |
 |---|:--:|--:|
-| Y | 1 | 4 |
-|---|:--:|--:|
+| **Y** | **1** | **4** |
 
