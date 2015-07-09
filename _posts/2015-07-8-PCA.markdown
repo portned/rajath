@@ -50,6 +50,6 @@ The variance of _X_ is 6.6667 and that of _Y_ is 3.3335. Which tells us that the
 Now let us consider two dimensional data, `(X,Y)` say
 
 | X | 2 | 3 |
-|---|:--:|--:|
+|---|--|--|
 | Y | 1 | 4 |
 
