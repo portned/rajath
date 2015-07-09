@@ -49,26 +49,7 @@ The variance of _X_ is 6.6667 and that of _Y_ is 3.3335. Which tells us that the
 
 Now let us consider two dimensional data, `(X,Y)` say
 
-|--------|----|------|
-|Markdown|Less|Pretty|
-|--------|----|------|
-|*Still*|`renders`|**nicely**|
-|1|2|3|
+| X | 2 | 3 |
+|---|:--:|--:|
+| Y | 1 | 4 |
 
-
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
-
-
-|   |   |   |   |   |
-
-|---|---|---|---|---|
-
-|   |   |   |   |   |
-
-|   |   |   |   |   |
-
-|   |   |   |   |   |
