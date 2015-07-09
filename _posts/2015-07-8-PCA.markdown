@@ -70,24 +70,111 @@ Now we will introduce another parameter that will give the relation between the 
 
 Covariance can be understood as variance but between two parameters and not by itself. Hence defined as
 
-$$cov(X,Y) = {\frac{ \sum_ {i=1}^n{(X_i-\bar{X})}{(Y-\bar{Y})}}{(n-1)}}$$
+![](http://rogercortesi.com/eqn/tempimagedir/eqn5314.png)
 
 If you observe covariance and variance formula we can conclude that the covariance of itself that is cov(X,X) is nothing but the variance of X. ( If you did not understand, rewrite the above formula for cov(X,X) and you will see for yourself).
 
-In the dataset under considerstion we can represent the same in a matrix. This matrix is also called as the variance-covariance matrix.
+For the above considered example the covariance is, cov(X,Y) = 5.6
 
-$$\begin{pmatrix} cov(X,X) & cov(X,Y) \\ cov(Y,X) & cov(Y,Y) \end{pmatrix}$$
+We can represent the same in a matrix. This matrix is also called as the variance-covariance matrix.
 
-\begin{pmatrix} x & y \\ z & v \end{pmatrix}
+![](http://rogercortesi.com/eqn/tempimagedir/eqn7066.png)
 
-$$ \left( \begin{array}{ccc}
-a & b & c \\
-d & e & f \\
-g & h & i \end{array} \right)$$
+Note that cov(X,X) = \\(X_{var}\\)
 
-$$\begin{bmatrix} x & y \\ z & v \end{bmatrix}$$
+and cov(Y,Y) = \\(Y_{var}\\)
 
-$$\left( \begin{array}{ccc}a & b & c \\ d & e & f \\ g & h & i \end{array} \right)$$
+also cov(X,Y) = cov(Y,X)
+
+Thus now the variance-covariance matrix can be re-written as
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn1128.png)
+
+Substituting the values as calculated before we get the variance-covariance matrix for the example dataset `(X,Y)` as
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn6731.png)
+
+
+Now that we have the matrix to actually know which dataset has the most information and to extraxt the "Principal" information. We calculate the eigen values and eigen vectors
+
+Note: In case you have forgotten how to calculate the eigen values and vectors refer [this document](https://www.scss.tcd.ie/Rozenn.Dahyot/CS1BA1/SolutionEigen.pdf).
+
+For the example (X,Y)
+
+eigen values are
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn3402.png)
+
+and the eigen vectors are
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn2225.png)
+
+The two eigen vectors obtained are perpendicular to one another.
+
+Now comes the most interesting part. Read carefully, _"The eigen vector with the highest eigen value is the principal component of the data under consideration"_. This is what PCA is all about.
+
+Here in this example the second eigen vector becomes the principal component as it has a higher eigen value of 12.83625 thus we write a feature matrix for the data set containing the eigen vectors in order of higest to lowest importance. Thus we get
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn8989.png)
+
+Now that we know the principal component, The last step in PCA is to get the final transformed data.
+
+Let us call the final dataset as _Findata_. The above feature matrix as _featuremat_
+
+Consider the data set `(X,Y)`
+
+| X | _2_ | _3_ | _5_ | _7_ | _2_ | _1_ |
+|---|:--:|--:| --:| --:| --:| --:|
+| **Y** | _**1**_ | _**4**_ | _**8**_ | _**7**_ | _**1**_ | _**3**_ |
+
+To make the mean 0. Subtract every data in the respective datasets with its mean. (i.e. \\(X-\bar{X}\\) )
+
+The dataset `(X,Y)` now becomes
+
+| X | _-1.33333333_ | _-0.33333333_ |  _1.66666667_ | _3.66666667_ | _-1.33333333_ | _-2.33333333_ |
+|---|:--:|--:| --:| --:| --:| --:|
+| **Y** | _**-3**_ | _**0**_ | _**4**_ | _**3**_ | _**-3**_ | _**-1**_ |
+
+Let us represent this in an array and call it _datam_
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn3421.png)
+
+Let us call the final transformed dataset as _Findata_. The feature matrix as _featuremat_
+
+Take the transpose of _feauturemat_ so that the highest eigen vector comes to the first row and the next highest to the second row and so on.
+
+Now _featuremat_ becomes
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn8989.png)
+
+We take the transpose of the _datam_ if the first column contains the first dataset and second the second dataset so when transpose is taken first row will have the first dataset, second row the second dataset and so on. But in this example we have considered the _datam_ itself having first row as first dataset, second row with second dataset. hence no need of transpose.
+
+The very last step in PCA is
+
+$$Findata = featuremat \times datam$$
+
+Thus we get the final transformed data.
+
+In this case _Findata_ is
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn7388.png)
+
+This is final data obtained. To reduce a dimension that is to make this two dimensional data into one dimensional data all you have to do is consider only the highest eigen vector in the feature matrix and continue with the same steps and you will successfully reduce the data set into one dimension. The _Findata_ so obtained when only the highest eigen vector is considered is
+
+![](http://rogercortesi.com/eqn/tempimagedir/eqn2622.png)
+
+
+This is what is otherwise called as data reduction or compression etc which will be discussed in detail in a separate post.
+
+Now consider Multi dimensional data say `(A,B,C,....)`. Everything is same as that of two dimensional dataset. While considering eigenvectors. You can consider how many every you want based on how much reduction in data you want.
+
+Now that you have understood PCA in further posts I will explain about implementing PCA in python, It's application in image compression and how it can be used for facial recognition with and without neural nets.
+
+For any doubts feel free to comment or drop a mail to _rajathkumar.exe@gmail.com_ 
+
+Peace.
+
+
 
  
 

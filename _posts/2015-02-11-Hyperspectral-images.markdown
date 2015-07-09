@@ -207,7 +207,7 @@ Play around by changing the bands and you will see the color of the image will c
 
 That is Hyperspectral Image.
 
-If you have any doubts feel free to comment or you can drop a mail to _rajathkumar.exe@gmail.com_ 
+For any doubts feel free to comment or drop a mail to _rajathkumar.exe@gmail.com_ 
 
 Peace.
 
