@@ -1,15 +1,14 @@
 ---
 layout: post
-title:  "Understanding Principal Component Analysis"
+title:  "Mathematically, Principal Component Analysis"
 date:   2015-07-9 20:21:21
 categories: Understanding
 tags: PCA
-image: /assets/images/lala.png
 permalink: /PCA/
 ---
 
 ####Prologue
-In this post I will try to breakdown Principal Component Analysis into bits one can easily understand. For a better understanding I will do a quick walkthrough about the important mathematical concepts that you might have studied but haven't used it in real world applications. I have explained the entire concept of PCA by taking an example I hope this approach would help in complete understanding of this topic.
+In this post, Principal Component Analysis will be broken down into mathematical bits one can easily understand. For a better insight a quick walkthrough about the important mathematical concepts that you might have studied but haven't used it in the real sense is done where necessary. The entire concept is explained by taking an example, Hope this approach would help in complete understanding of the topic.
 
 
 ####Principal Component Analysis
@@ -72,7 +71,7 @@ Now we will introduce another parameter that will give the relation between the 
 
 Covariance can be understood as variance but between two parameters and not by itself. Hence defined as
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn5314.png)
+![](/assets/images/pca/2.png)
 
 If you observe covariance and variance formula we can conclude that the covariance of itself that is cov(X,X) is nothing but the variance of X. ( If you did not understand, rewrite the above formula for cov(X,X) and you will see for yourself).
 
@@ -80,7 +79,7 @@ For the above considered example the covariance is, cov(X,Y) = 5.6
 
 We can represent the same in a matrix. This matrix is also called as the variance-covariance matrix.
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn7066.png)
+![](/assets/images/pca/1.png)
 
 Note that cov(X,X) = \\(X_{var}\\)
 
@@ -90,11 +89,11 @@ also cov(X,Y) = cov(Y,X)
 
 Thus now the variance-covariance matrix can be re-written as
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn1128.png)
+![](/assets/images/pca/10.png)
 
 Substituting the values as calculated before we get the variance-covariance matrix for the example dataset `(X,Y)` as
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn6731.png)
+![](/assets/images/pca/3.png)
 
 
 Now that we have the matrix to actually know which dataset has the most information and to extraxt the "Principal" information. We calculate the eigen values and eigen vectors
@@ -105,11 +104,11 @@ For the example (X,Y)
 
 eigen values are
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn3402.png)
+![](/assets/images/pca/5.png)
 
 and the eigen vectors are
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn2225.png)
+![](/assets/images/pca/4.png)
 
 The two eigen vectors obtained are perpendicular to one another.
 
@@ -117,7 +116,7 @@ Now comes the most interesting part. Read carefully, _"The eigen vector with the
 
 Here in this example the second eigen vector becomes the principal component as it has a higher eigen value of 12.83625 thus we write a feature matrix for the data set containing the eigen vectors in order of higest to lowest importance. Thus we get
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn8989.png)
+![](/assets/images/pca/6.png)
 
 Now that we know the principal component, The last step in PCA is to get the final transformed data.
 
@@ -139,7 +138,7 @@ The dataset `(X,Y)` now becomes
 
 Let us represent this in an array and call it _datam_
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn3421.png)
+![](/assets/images/pca/7.png)
 
 Let us call the final transformed dataset as _Findata_. The feature matrix as _featuremat_
 
@@ -147,7 +146,7 @@ Take the transpose of _feauturemat_ so that the highest eigen vector comes to th
 
 Now _featuremat_ becomes
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn8989.png)
+![](/assets/images/pca/11.png)
 
 We take the transpose of the _datam_ if the first column contains the first dataset and second the second dataset so when transpose is taken first row will have the first dataset, second row the second dataset and so on. But in this example we have considered the _datam_ itself having first row as first dataset, second row with second dataset. hence no need of transpose.
 
@@ -159,11 +158,11 @@ Thus we get the final transformed data.
 
 In this case _Findata_ is
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn7388.png)
+![](/assets/images/pca/8.png)
 
 This is final data obtained. To reduce a dimension that is to make this two dimensional data into one dimensional data all you have to do is consider only the highest eigen vector in the feature matrix and continue with the same steps and you will successfully reduce the data set into one dimension. The _Findata_ so obtained when only the highest eigen vector is considered is
 
-![](http://rogercortesi.com/eqn/tempimagedir/eqn2622.png)
+![](/assets/images/pca/9.png)
 
 
 This is what is otherwise called as data reduction or compression etc which will be discussed in detail in a separate post.
