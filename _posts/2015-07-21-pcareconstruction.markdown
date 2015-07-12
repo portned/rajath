@@ -19,7 +19,7 @@ Where _Findata_ is the final transformed data, _feauturemat_ is the matrix conta
 
 ##Reconstruction
 
-To get datam, the above equation can be rewritten as
+To get _datam_, the above equation can be rewritten as
 
 $$datam = {featuremat}^{-1} \times Findata$$
 
