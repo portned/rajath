@@ -9,7 +9,7 @@ permalink: /hyperspectralimage/
 ---
 Introduction
 =============
-I have been working with Hyperspectral Images for a long time now and these are some of the things I wish I knew when I started with this subject. Will not deny it was fun experimenting and experiencing some "dafuq" moments. Will try my best to keep this post as simple as possible. I will assume that you have basic knowledge of python.
+I have been working with Hyperspectral Images for a long time now and these are some of the things I wish I knew when I started with this subject. Will not deny it was fun experimenting and experiencing some "Whoa!" moments. Will try my best to keep this post as simple as possible. I will assume that you have basic knowledge of python.
 ###So what is a Hyperspectral Image?
 >Hyperspectral imaging, like other spectral imaging, collects and processes information from across the electromagnetic spectrum. The goal of hyperspectral imaging is to obtain the spectrum for each pixel in the image of a scene, with the purpose of finding objects, identifying materials, or detecting process.
 
