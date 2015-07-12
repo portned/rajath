@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Principal Component Analysis, Reconstruction"
-date:   2015-06-11 20:21:21
+date:   2015-07-12 20:21:21
 categories: Guide
 tags: PCA Reconstruction
 permalink: /pca/reconstruction
