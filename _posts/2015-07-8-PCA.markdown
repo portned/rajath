@@ -4,7 +4,7 @@ title:  "Mathematically, Principal Component Analysis"
 date:   2015-07-9 20:21:21
 categories: Tutorial
 tags: PCA
-permalink: /PCA/
+permalink: /pca/
 ---
 
 ####Prologue

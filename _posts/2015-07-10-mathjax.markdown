@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "Complete Guide : Install Mathjax with jekyll"
+date:   2015-07-9 20:21:21
+categories: Tutorial
+tags: PCA
+permalink: /mathjax/
+---
+
+##Prologue
+Truth be told, I never really knew about mathjax untill last week. I always thought those beautiful looking mathematical equations were written using some amazing font ( facepalm! ). Now that I know it was TeX that did the magic, In this post you will learn how to write equations in the standard format on your jekyll blog.
+
+##Mathjax
+[Mathjax](http://www.mathjax.org) is a javascript display engine for mathematics and the beauty of it is it accepts MathML, TeX and ASCIImath as input and produces the desired output.
+
+##Installing Mathjax
+There are two ways of doing it. One way is to access mathjax on their Content Delivery Network(CDN) or by installing it locally. The easiest way is to install it via CDN.
+
+Just add these lines in your `<head>` blog of your jekyll website.
+
+```
+<script type="text/javascript"
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+</head>
+```
+
+That is it. You are done.
+
+##Usage
+You can call mathjax by
+
+	$$ MathML, TeX or ASCIImath $$
+
+Example:
+
+	$$SD = \sqrt{\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
+
+produces
+
+$$SD = \sqrt{\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
+
+As you can see by using `$$` the equations are not produced inline and it always outputs in the next line. To display equations inline use
+
+	\\( MathML, TeX or ASCIImath \\)
+
+Example:
+
+Xbar can be denoted as \\(\bar{X}\\).
+
+Peace.
+
+
