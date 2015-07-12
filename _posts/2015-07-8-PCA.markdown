@@ -167,6 +167,8 @@ This is what is otherwise called as data reduction or compression etc which will
 
 Now consider Multi dimensional data say `(A,B,C,....)`. Everything is same as that of two dimensional dataset. While considering eigenvectors. You can consider how many every you want based on how much reduction in data you want.
 
+If you want to get the original data back from the transformed data you can read about recontruction part of PCA [here](http://www.rajathkumar.com/pca/reconstruction)
+
 Now that you have understood PCA in further posts I will explain about implementing PCA in python, It's application in image compression and how it can be used for facial recognition with and without neural nets.
 
 For any doubts feel free to comment or drop a mail to _rajathkumar.exe@gmail.com_ 
