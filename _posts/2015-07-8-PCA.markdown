@@ -65,8 +65,6 @@ Variance of X,		\\(X_{var}\\) = 5.0667
 
 Variance of Y,		\\(Y_{var}\\) = 8.8
 
-cov is 5.6
-
 Now we will introduce another parameter that will give the relation between the two dimensions. **Covariance**.
 
 Covariance can be understood as variance but between two parameters and not by itself. Hence defined as
