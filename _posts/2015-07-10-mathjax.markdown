@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Complete Guide : Install Mathjax with jekyll"
+title:  "Complete Guide : Install and using Mathjax on your website"
 date:   2015-07-9 20:21:21
 categories: Tutorial
 tags: PCA
