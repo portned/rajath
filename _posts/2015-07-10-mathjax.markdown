@@ -16,7 +16,7 @@ Truth be told, I never really knew about mathjax untill last week. I always thou
 ##Installing Mathjax
 There are two ways of doing it. One way is to access mathjax on their Content Delivery Network(CDN) or by installing it locally. The easiest way is to install it via CDN.
 
-Just add these lines in your `<head>` blog of your jekyll website.
+Just add these lines in your `<head>` tag of your website.
 
 ```
 <script type="text/javascript"
