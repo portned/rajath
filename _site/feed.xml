@@ -6,17 +6,359 @@
 </description>
     <link>http://www.rajathkumar.com/</link>
     <atom:link href="http://www.rajathkumar.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 12 Feb 2015 02:05:49 +0530</pubDate>
-    <lastBuildDate>Thu, 12 Feb 2015 02:05:49 +0530</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2015 02:03:39 +0530</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2015 02:03:39 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Principal Component Analysis, Reconstruction</title>
+        <description>&lt;h2 id=&quot;prologue&quot;&gt;Prologue&lt;/h2&gt;
+
+&lt;p&gt;I would assume that you already have understood PCA. If you haven&amp;#39;t, Then you can read about it &lt;a href=&quot;http://www.rajathkumar.com/pca/&quot;&gt;here.&lt;/a&gt;. In this post you will learn about recovering back the original data from the transformed data. I will be using the same terminologies as I have used in the previous post, &lt;a href=&quot;http://www.rajathkumar.com/pca/&quot;&gt;Mathematically, Principal Component Analysis&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;PCA, As we have understood before transforms the given data into new data by taking into consideration it&amp;#39;s importance, i.e. Eigen Values. Recall the equation&lt;/p&gt;
+
+&lt;p&gt;$$Findata = featuremat \times datam$$&lt;/p&gt;
+
+&lt;p&gt;Where &lt;em&gt;Findata&lt;/em&gt; is the final transformed data, &lt;em&gt;feauturemat&lt;/em&gt; is the matrix containing eigen vectors with the highest eigen vector in the first row and second highest in the second row and so on, Finally &lt;em&gt;datam&lt;/em&gt; is the original given data under consideration.&lt;/p&gt;
+
+&lt;h2 id=&quot;reconstruction&quot;&gt;Reconstruction&lt;/h2&gt;
+
+&lt;p&gt;To get &lt;em&gt;datam&lt;/em&gt;, the above equation can be rewritten as&lt;/p&gt;
+
+&lt;p&gt;$$datam = {featuremat}^{-1} \times Findata$$&lt;/p&gt;
+
+&lt;p&gt;Now &lt;em&gt;feauturemat&lt;/em&gt; contains the eigen vectors. If these vectors are unit vectors then the inverse of the matrix is nothing but the transpose of the matrix. But if it is not then the above statement is not true. Note that in most of the cases most of the math libraries will output unit eigen vectors. I will be considering the eigen vectors so obtained are unit vectors. Now the equation becomes&lt;/p&gt;
+
+&lt;p&gt;$$datam = {featuremat}^{T} \times Findata$$&lt;/p&gt;
+
+&lt;p&gt;But &lt;em&gt;datam&lt;/em&gt; is 0 mean data. i.e. mean subtracted data. (Recall from previous post). Hence&lt;/p&gt;
+
+&lt;p&gt;$$datam = Originaldata - Mean$$&lt;/p&gt;
+
+&lt;p&gt;Substituting this in the previous equation&lt;/p&gt;
+
+&lt;p&gt;$$Originaldata - Mean = {featuremat}^{-1} \times Findata$$&lt;/p&gt;
+
+&lt;p&gt;Thus &lt;em&gt;Originaldata&lt;/em&gt; is expressed as&lt;/p&gt;
+
+&lt;p&gt;$$Originaldata = ({featuremat}^{-1} \times Findata) + Mean$$&lt;/p&gt;
+
+&lt;p&gt;Peace.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Jul 2015 01:51:21 +0530</pubDate>
+        <link>http://www.rajathkumar.com/pca/reconstruction</link>
+        <guid isPermaLink="true">http://www.rajathkumar.com/pca/reconstruction</guid>
+        
+        <category>PCA</category>
+        
+        <category>Reconstruction</category>
+        
+        
+        <category>guide</category>
+        
+      </item>
+    
+      <item>
+        <title>Complete Guide : Installation and usage of Mathjax on your website</title>
+        <description>&lt;h2 id=&quot;prologue&quot;&gt;Prologue&lt;/h2&gt;
+
+&lt;p&gt;Truth be told, I never really knew about mathjax untill last week. I always thought those beautiful looking mathematical equations were written using some amazing font ( facepalm! ). Now that I know it was TeX that did the magic, In this post you will learn how to write equations in the standard format on your jekyll blog.&lt;/p&gt;
+
+&lt;h2 id=&quot;mathjax&quot;&gt;Mathjax&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.mathjax.org&quot;&gt;Mathjax&lt;/a&gt; is a javascript display engine for mathematics and the beauty of it is it accepts MathML, TeX and ASCIImath as input and produces the desired output.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-mathjax&quot;&gt;Installing Mathjax&lt;/h2&gt;
+
+&lt;p&gt;There are two ways of doing it. One way is to access mathjax on their Content Delivery Network(CDN) or by installing it locally. The easiest way is to install it via CDN.&lt;/p&gt;
+
+&lt;p&gt;Just add these lines in your &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag of your website.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
+  src=&amp;quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;
+&amp;lt;/script&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
+   src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js&amp;quot;&amp;gt;
+&amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That is it. You are done.&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;You can call mathjax by&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$$ MathML, TeX or ASCIImath $$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$$SD = \sqrt{\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;produces&lt;/p&gt;
+
+&lt;p&gt;$$SD = \sqrt{\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$&lt;/p&gt;
+
+&lt;p&gt;As you can see by using &lt;code&gt;$$&lt;/code&gt; the equations are not produced inline and it always outputs in the next line. To display equations inline use&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;\\( MathML, TeX or ASCIImath \\)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;Xbar can be denoted as \(\bar{X}\).&lt;/p&gt;
+
+&lt;p&gt;Peace.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Jul 2015 01:51:21 +0530</pubDate>
+        <link>http://www.rajathkumar.com/mathjax/</link>
+        <guid isPermaLink="true">http://www.rajathkumar.com/mathjax/</guid>
+        
+        <category>Mathjax</category>
+        
+        <category>Jekyll</category>
+        
+        
+        <category>guide</category>
+        
+      </item>
+    
+      <item>
+        <title>Mathematically, Principal Component Analysis</title>
+        <description>&lt;h4 id=&quot;prologue&quot;&gt;Prologue&lt;/h4&gt;
+
+&lt;p&gt;In this post, Principal Component Analysis will be broken down into mathematical bits one can easily understand. For a better insight a quick walkthrough about the important mathematical concepts that you might have studied but haven&amp;#39;t used it in the real sense is done where necessary. The entire concept is explained by taking an example, Hope this approach would help in complete understanding of the topic.&lt;/p&gt;
+
+&lt;h4 id=&quot;principal-component-analysis&quot;&gt;Principal Component Analysis&lt;/h4&gt;
+
+&lt;p&gt;It is the oldest and the most widely used statistical multivariate technique which finds a pattern in the data under consideration. PCA can be further extended towards dimensionality reduction by extracting important features which are necessary to the given problem statement and ignoring the ones which aren&amp;#39;t. It find&amp;#39;s its application in face recognition, Image compression, Dimensionality reduction etc.&lt;/p&gt;
+
+&lt;p&gt;Let us get into the nitty gritty, First I will explain by taking an example and applying PCA to a simple one dimensional dataset. Further will take two dimensions and extend it to multi dimensions.&lt;/p&gt;
+
+&lt;p&gt;Consider a data set that you would like to study. As an example let us take some random &lt;strong&gt;one dimensional&lt;/strong&gt; dataset &lt;em&gt;X&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;X = { 5,2,3,9,1,4 }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now calculating the &lt;strong&gt;mean&lt;/strong&gt; of &lt;em&gt;X&lt;/em&gt; with &lt;em&gt;n&lt;/em&gt; number of data by using the formula&lt;/p&gt;
+
+&lt;p&gt;$${\bar{X} = \frac{ \sum_ {i=1}^n X_i}{n}}$$&lt;/p&gt;
+
+&lt;p&gt;Thus, The mean, \(\bar{X}\) will now be equal to &lt;em&gt;4&lt;/em&gt;. Mean as everybody knows it gives the center point of the dataset or the average of the entire dataset.&lt;/p&gt;
+
+&lt;p&gt;Now consider another dataset &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Y = { 5,3,2,7,2,5 }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice the mean, \(\bar{Y}\) of this dataset is also &lt;em&gt;4&lt;/em&gt;. So now how do you know how these two data is different? Or how it varies?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Standard Deviation&lt;/strong&gt;. Wikipedia defines it as &lt;em&gt;&amp;quot;A measure that is used to quantify the amount of variation or dispersion of a set of data values&amp;quot;&lt;/em&gt; which simply means it gives a picture about how the data varies with respect to the mean. For the &lt;em&gt;X&lt;/em&gt; dataset standard deviation is given by the formula&lt;/p&gt;
+
+&lt;p&gt;$$SD = \sqrt{\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$&lt;/p&gt;
+
+&lt;p&gt;Took me sometime to understand as to why &lt;code&gt;(n-1)&lt;/code&gt; is used. Wikipedia has the &lt;a href=&quot;https://en.wikipedia.org/wiki/Standard_deviation&quot;&gt;perfect explanation&lt;/a&gt;. As of now, Understand it is Bessel&amp;#39;s correction and applying it would give a better answer.&lt;/p&gt;
+
+&lt;p&gt;Now &lt;strong&gt;variance&lt;/strong&gt; is nothing but the the square of standard deviation.&lt;/p&gt;
+
+&lt;p&gt;$$var = SD^2$$&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;$$var={\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$&lt;/p&gt;
+
+&lt;p&gt;The variance of &lt;em&gt;X&lt;/em&gt; is 8 and that of &lt;em&gt;Y&lt;/em&gt; is 4. Which tells us that the data of &lt;em&gt;X&lt;/em&gt; is more varied or spread across than the data of &lt;em&gt;Y&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now let us consider two dimensional data, &lt;code&gt;(X,Y)&lt;/code&gt; say&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;X&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;&lt;em&gt;2&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;3&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;5&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;7&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;2&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;1&lt;/em&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;Repeat the same process as it was done for one dimensional data set by considering &lt;em&gt;X&lt;/em&gt; and &lt;em&gt;Y&lt;/em&gt; separate.
+We will yield the following result,&lt;/p&gt;
+
+&lt;p&gt;Mean of X,      \(\bar{X}\) = 3.3335&lt;/p&gt;
+
+&lt;p&gt;Mean of Y,      \(\bar{Y}\) = 4.0&lt;/p&gt;
+
+&lt;p&gt;Variance of X,      \(X_{var}\) = 5.0667&lt;/p&gt;
+
+&lt;p&gt;Variance of Y,      \(Y_{var}\) = 8.8&lt;/p&gt;
+
+&lt;p&gt;Now we will introduce another parameter that will give the relation between the two dimensions. &lt;strong&gt;Covariance&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Covariance can be understood as variance but between two parameters and not by itself. Hence defined as&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;If you observe covariance and variance formula we can conclude that the covariance of itself that is cov(X,X) is nothing but the variance of X. ( If you did not understand, rewrite the above formula for cov(X,X) and you will see for yourself).&lt;/p&gt;
+
+&lt;p&gt;For the above considered example the covariance is, cov(X,Y) = 5.6&lt;/p&gt;
+
+&lt;p&gt;We can represent the same in a matrix. This matrix is also called as the variance-covariance matrix.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that cov(X,X) = \(X_{var}\)&lt;/p&gt;
+
+&lt;p&gt;and cov(Y,Y) = \(Y_{var}\)&lt;/p&gt;
+
+&lt;p&gt;also cov(X,Y) = cov(Y,X)&lt;/p&gt;
+
+&lt;p&gt;Thus now the variance-covariance matrix can be re-written as&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/10.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Substituting the values as calculated before we get the variance-covariance matrix for the example dataset &lt;code&gt;(X,Y)&lt;/code&gt; as&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that we have the matrix to actually know which dataset has the most information and to extraxt the &amp;quot;Principal&amp;quot; information. We calculate the eigen values and eigen vectors&lt;/p&gt;
+
+&lt;p&gt;Note: In case you have forgotten how to calculate the eigen values and vectors refer &lt;a href=&quot;https://www.scss.tcd.ie/Rozenn.Dahyot/CS1BA1/SolutionEigen.pdf&quot;&gt;this document&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For the example (X,Y)&lt;/p&gt;
+
+&lt;p&gt;eigen values are&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;and the eigen vectors are&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The two eigen vectors obtained are perpendicular to one another.&lt;/p&gt;
+
+&lt;p&gt;Now comes the most interesting part. Read carefully, &lt;em&gt;&amp;quot;The eigen vector with the highest eigen value is the principal component of the data under consideration&amp;quot;&lt;/em&gt;. This is what PCA is all about.&lt;/p&gt;
+
+&lt;p&gt;Here in this example the second eigen vector becomes the principal component as it has a higher eigen value of 12.83625 thus we write a feature matrix for the data set containing the eigen vectors in order of higest to lowest importance. Thus we get&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/6.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that we know the principal component, The last step in PCA is to get the final transformed data.&lt;/p&gt;
+
+&lt;p&gt;Let us call the final dataset as &lt;em&gt;Findata&lt;/em&gt;. The above feature matrix as &lt;em&gt;featuremat&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the data set &lt;code&gt;(X,Y)&lt;/code&gt;&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;X&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;&lt;em&gt;2&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;3&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;5&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;7&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;2&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;1&lt;/em&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;To make the mean 0. Subtract every data in the respective datasets with its mean. (i.e. \(X-\bar{X}\) )&lt;/p&gt;
+
+&lt;p&gt;The dataset &lt;code&gt;(X,Y)&lt;/code&gt; now becomes&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;X&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;&lt;em&gt;-1.33333333&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;-0.33333333&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;1.66666667&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;3.66666667&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;-1.33333333&lt;/em&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;&lt;em&gt;-2.33333333&lt;/em&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;&lt;strong&gt;-3&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;-3&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;em&gt;&lt;strong&gt;-1&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;Let us represent this in an array and call it &lt;em&gt;datam&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/7.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Let us call the final transformed dataset as &lt;em&gt;Findata&lt;/em&gt;. The feature matrix as &lt;em&gt;featuremat&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Take the transpose of &lt;em&gt;feauturemat&lt;/em&gt; so that the highest eigen vector comes to the first row and the next highest to the second row and so on.&lt;/p&gt;
+
+&lt;p&gt;Now &lt;em&gt;featuremat&lt;/em&gt; becomes&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/11.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;We take the transpose of the &lt;em&gt;datam&lt;/em&gt; if the first column contains the first dataset and second the second dataset so when transpose is taken first row will have the first dataset, second row the second dataset and so on. But in this example we have considered the &lt;em&gt;datam&lt;/em&gt; itself having first row as first dataset, second row with second dataset. hence no need of transpose.&lt;/p&gt;
+
+&lt;p&gt;The very last step in PCA is&lt;/p&gt;
+
+&lt;p&gt;$$Findata = featuremat \times datam$$&lt;/p&gt;
+
+&lt;p&gt;Thus we get the final transformed data.&lt;/p&gt;
+
+&lt;p&gt;In this case &lt;em&gt;Findata&lt;/em&gt; is&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/8.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;This is final data obtained. To reduce a dimension that is to make this two dimensional data into one dimensional data all you have to do is consider only the highest eigen vector in the feature matrix and continue with the same steps and you will successfully reduce the data set into one dimension. The &lt;em&gt;Findata&lt;/em&gt; so obtained when only the highest eigen vector is considered is&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/pca/9.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;This is what is otherwise called as data reduction or compression etc which will be discussed in detail in a separate post.&lt;/p&gt;
+
+&lt;p&gt;Now consider Multi dimensional data say &lt;code&gt;(A,B,C,....)&lt;/code&gt;. Everything is same as that of two dimensional dataset. While considering eigenvectors. You can consider how many every you want based on how much reduction in data you want.&lt;/p&gt;
+
+&lt;p&gt;If you want to get the original data back from the transformed data you can read about recontruction part of PCA &lt;a href=&quot;http://www.rajathkumar.com/pca/reconstruction&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you have understood PCA in further posts I will explain about implementing PCA in python, It&amp;#39;s application in image compression and how it can be used for facial recognition with and without neural nets.&lt;/p&gt;
+
+&lt;p&gt;For any doubts feel free to comment or drop a mail to &lt;em&gt;&lt;a href=&quot;mailto:rajathkumar.exe@gmail.com&quot;&gt;rajathkumar.exe@gmail.com&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
+
+&lt;p&gt;Peace.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Jul 2015 01:51:21 +0530</pubDate>
+        <link>http://www.rajathkumar.com/pca/</link>
+        <guid isPermaLink="true">http://www.rajathkumar.com/pca/</guid>
+        
+        <category>PCA</category>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
         <title>Tutorial : Reading Hyperspectral Images</title>
-        <description>&lt;h1&gt;Introduction&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
-&lt;p&gt;I have been working with Hyperspectral Images for a long time now and these are some of the things I wish I knew when I started with this subject. Will not deny it was fun experimenting and experiencing some &amp;quot;dafuq&amp;quot; moments. Will try my best to keep this post as simple as possible. I will assume that you have basic knowledge of python.&lt;/p&gt;
+&lt;p&gt;I have been working with Hyperspectral Images for a long time now and these are some of the things I wish I knew when I started with this subject. Will not deny it was fun experimenting and experiencing some &amp;quot;Whoa!&amp;quot; moments. Will try my best to keep this post as simple as possible. I will assume that you have basic knowledge of python.&lt;/p&gt;
 
-&lt;h3&gt;So what is a Hyperspectral Image?&lt;/h3&gt;
+&lt;h3 id=&quot;so-what-is-a-hyperspectral-image?&quot;&gt;So what is a Hyperspectral Image?&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Hyperspectral imaging, like other spectral imaging, collects and processes information from across the electromagnetic spectrum. The goal of hyperspectral imaging is to obtain the spectrum for each pixel in the image of a scene, with the purpose of finding objects, identifying materials, or detecting process.&lt;/p&gt;
@@ -29,7 +371,7 @@ All you need to know is that if a normal image in matrix form has rows and colum
 
 &lt;p&gt;Speaking of Hyperspectral sensor AVIRIS, Airborne Visible/Infrared Imaging Spectrometer from NASA has acquired images of Cuprite, Nevada which is widely used for studying hyperspectral images. We will be using Cuprite images available free for download &lt;a href=&quot;http://aviris.jpl.nasa.gov/data/free_data.html&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1&gt;Let&amp;#39;s Get Started&lt;/h1&gt;
+&lt;h1 id=&quot;let&amp;#39;s-get-started&quot;&gt;Let&amp;#39;s Get Started&lt;/h1&gt;
 
 &lt;p&gt;Just to let you know that Hyperspectral Images can be read through softwares like ENVI, ERDAS imagine which of course is not free. &lt;/p&gt;
 
@@ -59,7 +401,7 @@ All you need to know is that if a normal image in matrix form has rows and colum
 
 &lt;p&gt;This will enable pylab and start IPython in your default browser. Navigate to the folder where you have downloaded the image and open a new Notebook.&lt;/p&gt;
 
-&lt;h1&gt;The Code&lt;/h1&gt;
+&lt;h1 id=&quot;the-code&quot;&gt;The Code&lt;/h1&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;spectral&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt;
@@ -211,13 +553,13 @@ Interleave can be of 3 type &lt;code&gt;BIP&lt;/code&gt;, &lt;code&gt;BIL&lt;/co
 
 &lt;p&gt;That is Hyperspectral Image.&lt;/p&gt;
 
-&lt;p&gt;If you have any doubts feel free to comment or you can drop a mail to &lt;em&gt;rajathkumar.exe@gmail.com&lt;/em&gt; &lt;/p&gt;
+&lt;p&gt;For any doubts feel free to comment or drop a mail to &lt;em&gt;&lt;a href=&quot;mailto:rajathkumar.exe@gmail.com&quot;&gt;rajathkumar.exe@gmail.com&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
 
 &lt;p&gt;Peace.&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Feb 2015 01:51:21 +0530</pubDate>
-        <link>http://www.rajathkumar.com/tutorial/2015/02/12/Hyperspectral-images.html</link>
-        <guid isPermaLink="true">http://www.rajathkumar.com/tutorial/2015/02/12/Hyperspectral-images.html</guid>
+        <link>http://www.rajathkumar.com/hyperspectralimage/</link>
+        <guid isPermaLink="true">http://www.rajathkumar.com/hyperspectralimage/</guid>
         
         <category>Python</category>
         
@@ -234,7 +576,7 @@ Interleave can be of 3 type &lt;code&gt;BIP&lt;/code&gt;, &lt;code&gt;BIL&lt;/co
     
       <item>
         <title>Hello World!</title>
-        <description>&lt;h1&gt;Once upon a time&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;once-upon-a-time&quot;&gt;Once upon a time&lt;/h1&gt;
 
 &lt;p&gt;writing this post was a dream. Now that i have wrote it, A 1000 more dreams just got wings.
 First Post!
@@ -246,6 +588,139 @@ Cheers!&lt;/p&gt;
         
         
         <category>personal</category>
+        
+      </item>
+    
+      <item>
+        <title>Portfolio</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/gdgio.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/appexpobanner-5.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/blrdynamics.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/callforspeakers.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/devfestagenda-3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/gdgbangaloredevfest.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/plackal1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/googimp1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/googimp3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/million.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/symbol.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/callforspeakers2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/carousel_5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/paperboat.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/fin.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/gdglogo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/gdgposter.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/appengine.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/gdgtshirt.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/hny2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/einvoiccing-1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/dart.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/1-1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/icon_annually.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/icon_monthly.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/india.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/cake1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/receipts.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/register.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Design/webdev.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Tue, 27 May 2014 06:48:00 +0530</pubDate>
+        <link>http://www.rajathkumar.com/design/</link>
+        <guid isPermaLink="true">http://www.rajathkumar.com/design/</guid>
+        
+        <category>Design</category>
+        
+        
+        <category>design</category>
         
       </item>
     

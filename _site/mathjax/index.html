@@ -7,7 +7,7 @@
   <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Hello World!</title>
+  <title>Complete Guide : Installation and usage of Mathjax on your website</title>
   <meta name="description" content="Things that I have done, learnt and thought about
 " />
 
@@ -16,7 +16,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="canonical" href="http://www.rajathkumar.com/personal/2015/02/11/first-post.html">
+  <link rel="canonical" href="http://www.rajathkumar.com/mathjax/">
 
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
 <!--  <link rel="stylesheet" href=""> -->
@@ -43,42 +43,77 @@
     <main class="content" role="main">
       <article class="post">
         
-        <div class="article-image">
-          <div class="post-image-image" style="background-image: url(/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.png)">
-            Article Image
-          </div>
+        <div class="noarticleimage">
           <div class="post-meta">
-            <h1 class="post-title">Hello World!</h1>
+            <h1 class="post-title">Complete Guide : Installation and usage of Mathjax on your website</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url(/assets/images/author.jpg)">Blog Logo</div>
-              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Rajath Kumar M.P</h4>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person"></h4>
               on
-              <time datetime="2015-02-11 00:55">11 Feb 2015</time>
+              <time datetime="2015-07-10T01:51:21+05:30">10 Jul 2015</time>
               <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
-            </div>
-            <div style="text-align:center">
-              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
             </div>
           </div>
         </div>
+        <br>
+        <br>
+        <br>
         
         <section class="post-content">
           <div class="post-reading">
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <h1 id="once-upon-a-time">Once upon a time</h1>
+          <h2 id="prologue">Prologue</h2>
 
-<p>writing this post was a dream. Now that i have wrote it, A 1000 more dreams just got wings.
-First Post!
-Cheers!</p>
+<p>Truth be told, I never really knew about mathjax untill last week. I always thought those beautiful looking mathematical equations were written using some amazing font ( facepalm! ). Now that I know it was TeX that did the magic, In this post you will learn how to write equations in the standard format on your jekyll blog.</p>
+
+<h2 id="mathjax">Mathjax</h2>
+
+<p><a href="http://www.mathjax.org">Mathjax</a> is a javascript display engine for mathematics and the beauty of it is it accepts MathML, TeX and ASCIImath as input and produces the desired output.</p>
+
+<h2 id="installing-mathjax">Installing Mathjax</h2>
+
+<p>There are two ways of doing it. One way is to access mathjax on their Content Delivery Network(CDN) or by installing it locally. The easiest way is to install it via CDN.</p>
+
+<p>Just add these lines in your <code>&lt;head&gt;</code> tag of your website.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;script type=&quot;text/javascript&quot;
+  src=&quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;
+   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js&quot;&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+</code></pre></div>
+<p>That is it. You are done.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>You can call mathjax by</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$$ MathML, TeX or ASCIImath $$
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$$SD = \sqrt{\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$
+</code></pre></div>
+<p>produces</p>
+
+<p>$$SD = \sqrt{\frac{ \sum_ {i=1}^n {(X_i-\bar{X})^2}}{(n-1)}}$$</p>
+
+<p>As you can see by using <code>$$</code> the equations are not produced inline and it always outputs in the next line. To display equations inline use</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">\\( MathML, TeX or ASCIImath \\)
+</code></pre></div>
+<p>Example:</p>
+
+<p>Xbar can be denoted as \(\bar{X}\).</p>
+
+<p>Peace.</p>
 
         </section>
         <footer class="post-footer">
           <section class="share">
             
               
-                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Hello+World%21&amp;u=http://www.rajathkumar.com/personal/2015/02/11/first-post"
+                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Complete+Guide+%3A+Installation+and+usage+of+Mathjax+on+your+website&amp;u=http://www.rajathkumar.com/mathjax"
                   onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
                 <i class="fa fa-facebook"></i><span class="hidden">facebook</span>
                 </a>
@@ -96,7 +131,7 @@ Cheers!</p>
               <h4>Rajath Kumar M.P</h4>
               <p class="bio"></p>
               <hr>
-              <p class="published">Published <time datetime="2015-02-11 00:55">11 Feb 2015</time></p>
+              <p class="published">Published <time datetime="2015-07-10 01:51">10 Jul 2015</time></p>
             </section>
           </div>
           

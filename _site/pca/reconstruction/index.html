@@ -7,7 +7,7 @@
   <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Hello World!</title>
+  <title>Principal Component Analysis, Reconstruction</title>
   <meta name="description" content="Things that I have done, learnt and thought about
 " />
 
@@ -16,7 +16,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="canonical" href="http://www.rajathkumar.com/personal/2015/02/11/first-post.html">
+  <link rel="canonical" href="http://www.rajathkumar.com/pca/reconstruction">
 
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
 <!--  <link rel="stylesheet" href=""> -->
@@ -43,42 +43,69 @@
     <main class="content" role="main">
       <article class="post">
         
-        <div class="article-image">
-          <div class="post-image-image" style="background-image: url(/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.png)">
-            Article Image
-          </div>
+        <div class="noarticleimage">
           <div class="post-meta">
-            <h1 class="post-title">Hello World!</h1>
+            <h1 class="post-title">Principal Component Analysis, Reconstruction</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url(/assets/images/author.jpg)">Blog Logo</div>
-              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Rajath Kumar M.P</h4>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person"></h4>
               on
-              <time datetime="2015-02-11 00:55">11 Feb 2015</time>
+              <time datetime="2015-07-13T01:51:21+05:30">13 Jul 2015</time>
               <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
-            </div>
-            <div style="text-align:center">
-              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
             </div>
           </div>
         </div>
+        <br>
+        <br>
+        <br>
         
         <section class="post-content">
           <div class="post-reading">
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <h1 id="once-upon-a-time">Once upon a time</h1>
+          <h2 id="prologue">Prologue</h2>
 
-<p>writing this post was a dream. Now that i have wrote it, A 1000 more dreams just got wings.
-First Post!
-Cheers!</p>
+<p>I would assume that you already have understood PCA. If you haven&#39;t, Then you can read about it <a href="http://www.rajathkumar.com/pca/">here.</a>. In this post you will learn about recovering back the original data from the transformed data. I will be using the same terminologies as I have used in the previous post, <a href="http://www.rajathkumar.com/pca/">Mathematically, Principal Component Analysis</a></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>PCA, As we have understood before transforms the given data into new data by taking into consideration it&#39;s importance, i.e. Eigen Values. Recall the equation</p>
+
+<p>$$Findata = featuremat \times datam$$</p>
+
+<p>Where <em>Findata</em> is the final transformed data, <em>feauturemat</em> is the matrix containing eigen vectors with the highest eigen vector in the first row and second highest in the second row and so on, Finally <em>datam</em> is the original given data under consideration.</p>
+
+<h2 id="reconstruction">Reconstruction</h2>
+
+<p>To get <em>datam</em>, the above equation can be rewritten as</p>
+
+<p>$$datam = {featuremat}^{-1} \times Findata$$</p>
+
+<p>Now <em>feauturemat</em> contains the eigen vectors. If these vectors are unit vectors then the inverse of the matrix is nothing but the transpose of the matrix. But if it is not then the above statement is not true. Note that in most of the cases most of the math libraries will output unit eigen vectors. I will be considering the eigen vectors so obtained are unit vectors. Now the equation becomes</p>
+
+<p>$$datam = {featuremat}^{T} \times Findata$$</p>
+
+<p>But <em>datam</em> is 0 mean data. i.e. mean subtracted data. (Recall from previous post). Hence</p>
+
+<p>$$datam = Originaldata - Mean$$</p>
+
+<p>Substituting this in the previous equation</p>
+
+<p>$$Originaldata - Mean = {featuremat}^{-1} \times Findata$$</p>
+
+<p>Thus <em>Originaldata</em> is expressed as</p>
+
+<p>$$Originaldata = ({featuremat}^{-1} \times Findata) + Mean$$</p>
+
+<p>Peace.</p>
 
         </section>
         <footer class="post-footer">
           <section class="share">
             
               
-                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Hello+World%21&amp;u=http://www.rajathkumar.com/personal/2015/02/11/first-post"
+                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Principal+Component+Analysis%2C+Reconstruction&amp;u=http://www.rajathkumar.com/pca/pcareconstruction"
                   onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
                 <i class="fa fa-facebook"></i><span class="hidden">facebook</span>
                 </a>
@@ -96,7 +123,7 @@ Cheers!</p>
               <h4>Rajath Kumar M.P</h4>
               <p class="bio"></p>
               <hr>
-              <p class="published">Published <time datetime="2015-02-11 00:55">11 Feb 2015</time></p>
+              <p class="published">Published <time datetime="2015-07-13 01:51">13 Jul 2015</time></p>
             </section>
           </div>
           
